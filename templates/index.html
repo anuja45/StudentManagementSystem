@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h2>Student Management System</h2>
+
+    <form id="studentForm" action="/add" method="post">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="number" name="age" placeholder="Age" required>
+        <input type="text" name="course" placeholder="Course" required>
+        <button type="submit">Add Student</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Course</th>
+            <th>Actions</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</td>
+            <td>{{ student[2] }}</td>
+            <td>{{ student[3] }}</td>
+            <td>{{ student[4] }}</td>
+            <td>
+                <button onclick="deleteStudent({{ student[0] }})">Delete</button>
+                <button onclick="editStudent({{ student[0] }}, '{{ student[1] }}', '{{ student[2] }}', {{ student[3] }}, '{{ student[4] }}')">Edit</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <script src="../static/script.js"></script>
+</body>
+</html>
