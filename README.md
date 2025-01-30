@@ -74,7 +74,8 @@ student-management-flask/
 ```
 
 ## Screenshots
-(Include screenshots of the application here)
+![image](https://github.com/user-attachments/assets/7a18b2eb-fd88-495e-a96d-91d2a8945266)
+
 
 ## License
 This project is licensed under the MIT License.
